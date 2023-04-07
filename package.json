@@ -1,0 +1,12 @@
+{
+  "name": "2.infinite-scroll",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "sass": "node-sass -w index.scss index.css"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}

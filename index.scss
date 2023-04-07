@@ -1,0 +1,89 @@
+html {
+  box-sizing: border-box;
+  font-size: 75%;
+}
+
+*,
+*::after,
+*::before {
+  box-sizing: inherit;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  font-weight: 400;
+  color: #333;
+  line-height: 1.6;
+  font-family: "Kalam", cursive;
+  overflow-x: hidden;
+}
+
+.container {
+  height: 100vh;
+  width: 100vw;
+  background: #111;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hidden {
+  display: none;
+}
+
+
+
+.lazy-img {
+  filter: blur(10px) brightness(80%);
+}
+
+// we can use two box-shadow at a time
+
+.start {
+  &__box,
+  &__btn {
+    border-radius: 7px;
+    border: 3px solid #000;
+    display: inline-block;
+    position: relative;
+
+    // it means &__box::before,&__btn::before
+    &::before {
+      content: "";
+      position: absolute;
+      top: 0.1rem;
+      left: 0;
+      height: 90%;
+      width: 100%;
+      border-radius: inherit;
+
+      border-top: 3px solid rgba(#ffff, 0.3);
+    }
+  }
+  &__box {
+    background: #222;
+    // border-top: inset 2px solid #555;
+    padding: 1.2rem;
+  }
+  &__btn {
+    padding: 1.7rem 2.2rem;
+    background-color: #555;
+    font-size: 2.2rem;
+    font-weight: 500;
+    cursor: pointer;
+    text-transform: uppercase;
+    // font-family: inherit;
+    outline: none;
+  }
+
+  &__btn:active {
+    transform: translateY(3px);
+
+    &::before {
+      border-top: none;
+    }
+  }
+}
+
+// box-shadow: inset(inside) 0(horizontal) 1rem(verical) 2.4rem(blur) -1.8rem(spread) color
